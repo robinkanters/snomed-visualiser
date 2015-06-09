@@ -4,6 +4,6 @@
 
     public abstract class SnomedMember : ISnomedMember
     {
-        public virtual ISctId SctId { get; set; }
+        public ISctId SctId { get; set; }
     }
 }
