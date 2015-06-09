@@ -17,6 +17,13 @@
                 Properties = split.Length > 1 ? ParseSnomedProperties(split[1]) : new List<ISnomedProperty>()
             };
 
+#if DEBUG
+            Console.WriteLine("Answer: {0}", answer.SctId.Id);
+            answer.Properties.ToList().ForEach(e =>
+            {
+                Console.WriteLine("Property: {0} = {1}", e.SctId.Id, e.Answer.SctId.Id);
+            });
+#endif
             return answer;
         }
 
