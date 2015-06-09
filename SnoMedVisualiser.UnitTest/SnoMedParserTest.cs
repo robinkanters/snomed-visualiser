@@ -26,6 +26,7 @@
 
         [Test]
         [TestCase("76505004:272741003=7771000")]
+        [TestCase("53057004:363698007=(76505004:272741003=7771000)")]
         public void ParseMultipartSnoMedCode(string code)
         {
             var answer = SnomedParser.ParseSnoMedString(code);
