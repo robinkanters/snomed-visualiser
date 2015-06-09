@@ -11,11 +11,11 @@
     {
         public static ISnomedAnswer ParseSnoMedString(string snomedString)
         {
-            var split = snomedString.Split(':');
-            var answer = new SnomedAnswer(SctId.FromString(split[0]));
-
-            if (split.Length > 1)
-                answer.Properties = ParseSnomedProperties(split[1]);
+            var split = Regex.Split(snomedString, ",(?=(?:[^']*'[^']*')*[^']*$)");
+            var answer = new SnomedAnswer(SctId.FromString(split[0]))
+            {
+                Properties = split.Length > 1 ? ParseSnomedProperties(split[1]) : new List<ISnomedProperty>()
+            };
 
             return answer;
         }
