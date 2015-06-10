@@ -35,8 +35,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.QualityTools.Testing.Fakes, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="nunit.framework">
       <HintPath>..\packages\NUnit.2.6.4\lib\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="SnoMedVisualiser.Fakes">
+      <HintPath>FakesAssemblies\SnoMedVisualiser.Fakes.dll</HintPath>
     </Reference>
     <Reference Include="System" />
   </ItemGroup>
@@ -53,10 +57,12 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="Nhtsdo\NhtsdoClientTest.cs" />
     <Compile Include="SnoMedParserTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Fakes Include="Fakes\SnoMedVisualiser.fakes" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
