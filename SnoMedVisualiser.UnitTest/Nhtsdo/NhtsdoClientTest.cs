@@ -9,9 +9,10 @@
     public class NhtsdoClientTest
     {
         [Test]
-        public void NhtsdoClient_DoApiRequest_Success()
+        [TestCase("41796003")]
+        public void NhtsdoClient_DoApiRequest_Success(string sctId)
         {
-            var id = SctId.FromString("41796003");
+            var id = SctId.FromString(sctId);
             var answer = NhtsdoClient.LookupAnswer(id);
 
             Assert.That(answer, Is.Not.Null);
