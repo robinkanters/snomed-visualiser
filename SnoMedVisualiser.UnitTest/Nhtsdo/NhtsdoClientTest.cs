@@ -19,5 +19,19 @@
             Assert.That(answer.SctId.Id, Is.EqualTo(id.Id));
             Assert.That(answer.DefaultTerm, Is.Not.Null.And.Not.Empty);
         }
+
+        [Test]
+        [TestCase("41796003")]
+        public async void NhtsdoClient_DoApiRequestAsync_Success(string sctId)
+        {
+            var id = SctId.FromString(sctId);
+            var answerTask = NhtsdoClient.LookupAnswerAsync(id);
+
+            var answer = await answerTask;
+
+            Assert.That(answer, Is.Not.Null);
+            Assert.That(answer.SctId.Id, Is.EqualTo(id.Id));
+            Assert.That(answer.DefaultTerm, Is.Not.Null.And.Not.Empty);
+        }
     }
 }
