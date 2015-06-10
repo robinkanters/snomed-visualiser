@@ -6,5 +6,6 @@
     {
         IList<ISnomedProperty> Properties { get; }
         ISctId SctId { get; set; }
+        string DefaultTerm { get; set; }
     }
 }

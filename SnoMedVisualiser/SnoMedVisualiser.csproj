@@ -53,8 +53,13 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Interface\INhtsdoClientRequest.cs" />
+    <Compile Include="Interface\INhtsdoClientResponse.cs" />
     <Compile Include="Interface\ISctId.cs" />
     <Compile Include="Model\SctId.cs" />
+    <Compile Include="Nhtsdo\NhtsdoClient.cs" />
+    <Compile Include="Nhtsdo\NhtsdoClientRequest.cs" />
+    <Compile Include="Nhtsdo\NhtsdoClientResponse.cs" />
     <Compile Include="SnomedParser.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
