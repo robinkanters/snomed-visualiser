@@ -1,5 +1,6 @@
 ﻿namespace SnoMedVisualiser.UnitTest.Nhtsdo
 {
+    using System.Diagnostics;
     using Interface;
     using Interface.Fakes;
     using Model;
@@ -15,6 +16,8 @@
             var id = SctId.FromString(sctId);
             var answer = NhtsdoClient.LookupAnswer(id);
 
+            Debug.WriteLine(answer.DefaultTerm);
+
             Assert.That(answer, Is.Not.Null);
             Assert.That(answer.SctId.Id, Is.EqualTo(id.Id));
             Assert.That(answer.DefaultTerm, Is.Not.Null.And.Not.Empty);
@@ -28,6 +31,8 @@
             var answerTask = NhtsdoClient.LookupAnswerAsync(id);
 
             var answer = await answerTask;
+
+            Debug.WriteLine(answer.DefaultTerm);
 
             Assert.That(answer, Is.Not.Null);
             Assert.That(answer.SctId.Id, Is.EqualTo(id.Id));
